@@ -36,6 +36,11 @@ namespace Kindhelm
             Tiny();
             ~Tiny();
 
+            rclcpp::TimerBase::SharedPtr _read_timer;
+
+            rclcpp::Publisher<sensor_msgs::msg::NavSatFix>::SharedPtr _nav_sat_fix_publisher;
+            rclcpp::Publisher<sensor_msgs::msg::Imu>::SharedPtr _imu_publisher;
+
             void openSerialPort();
 
             void prepareTermios(void);
@@ -59,7 +64,7 @@ namespace Kindhelm
 
             string _serial_port_name;
 
-            int _baudrate = B19200;
+            int _baudrate;
 
             int _bytes = 0;
             
