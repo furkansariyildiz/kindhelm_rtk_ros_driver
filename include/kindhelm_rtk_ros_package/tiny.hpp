@@ -41,9 +41,11 @@ namespace Kindhelm
             rclcpp::Publisher<sensor_msgs::msg::NavSatFix>::SharedPtr _nav_sat_fix_publisher;
             rclcpp::Publisher<sensor_msgs::msg::Imu>::SharedPtr _imu_publisher;
 
+            int settingBaudrate(int baudrate);
+
             void openSerialPort();
 
-            void prepareTermios(void);
+            void prepareTermios(termios *tty, int serial_port, int baudrate);
 
             void readTinyData(void);
 
