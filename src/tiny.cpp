@@ -121,7 +121,18 @@ void Tiny::prepareTermios(termios *tty, int serial_port, int baudrate)
 
 void Tiny::readTinyData(void)
 {
+    _bytes = read(_serial_port, _buffer, sizeof(_buffer));
 
+    if(_bytes != -1)
+    {
+        _readed_data = _readed_data + string(_buffer, _bytes);
+        if(_readed_data.size() > 100)
+        {
+            string serial_data = regex_replace(_readed_data, regex(" "), "");
+            makeSenseOfData(serial_data);
+            _readed_data = "";
+        }
+    }
 }
 
 
