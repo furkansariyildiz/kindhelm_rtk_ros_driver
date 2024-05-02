@@ -24,6 +24,8 @@
 #include <sys/socket.h>
 #include <sys/ioctl.h>
 
+#define PI 3.141592653589793238462
+
 using namespace std;
 
 namespace Kindhelm
