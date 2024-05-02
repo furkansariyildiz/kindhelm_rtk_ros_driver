@@ -137,6 +137,30 @@ void Tiny::readTinyData(void)
 
 
 
+void Tiny::makeSenseOfData(string serial_data)
+{
+    _regex_iterator_start = serial_data.cbegin();
+    _regex_iterator_end = serial_data.cend();
+
+    while(regex_search(_regex_iterator_start, _regex_iterator_end, _gngga_matches, _gngga_pattern) || regex_search(_regex_iterator_start, _regex_iterator_end, _pkhm_matches, _pkhm_pattern) || regex_search(_regex_iterator_start, _regex_iterator_end, _gnvtg_matches, _gnvtg_pattern))
+    {
+        if(!(_gngga_matches.empty()))
+        {
+
+        }
+        else if(!(_pkhm_matches.empty()))
+        {
+
+        }
+        else if(!(_gnvtg_matches.empty()))
+        {
+            
+        }
+    }
+}
+
+
+
 int main(int argc, char *argv[])
 {
     rclcpp::init(argc, argv);

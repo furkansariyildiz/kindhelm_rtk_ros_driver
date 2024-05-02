@@ -75,9 +75,16 @@ namespace Kindhelm
             char _buffer[256];
 
             regex _gngga_pattern;
+            smatch _gngga_matches;
+
             regex _pkhm_pattern;
+            smatch _pkhm_matches;
+
             regex _gnvtg_pattern;
+            smatch _gnvtg_matches;
+
             regex _keyword_pattern;
+            smatch _keyword_matches;
 
             string::const_iterator _regex_iterator_start, _regex_iterator_end;
 
