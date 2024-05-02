@@ -1,0 +1,4 @@
+/kindhelm_tiny_node:
+  ros__parameters:
+    port_name: "/dev/ttyUSB0" # Port name of Kindhelm Tiny
+    baudrate: 115200 # Baudrate of Kindhelm Tiny.
