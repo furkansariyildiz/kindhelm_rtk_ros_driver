@@ -146,7 +146,20 @@ void Tiny::makeSenseOfData(string serial_data)
     {
         if(!(_gngga_matches.empty()))
         {
-
+            string gngga_time = _gngga_matches[1].str();
+            string latitude = _gngga_matches[2].str();
+            string ns_indicator = _gngga_matches[3].str();
+            string longitude = _gngga_matches[4].str();
+            string ew_indicator = _gngga_matches[5].str();
+            string fix_quality = _gngga_matches[6].str();
+            string number_of_satellites = _gngga_matches[7].str();
+            string hdop = _gngga_matches[8].str();
+            string altitude = _gngga_matches[9].str();
+            string altitude_unit = _gngga_matches[10].str();
+            string geoid_separation = _gngga_matches[11].str();
+            string geoid_separation_unit = _gngga_matches[12];
+            string age_of_differential_correction = _gngga_matches[13].str();
+            string differential_reference_station_id = _gngga_matches[14].str();
         }
         else if(!(_pkhm_matches.empty()))
         {
@@ -154,11 +167,20 @@ void Tiny::makeSenseOfData(string serial_data)
         }
         else if(!(_gnvtg_matches.empty()))
         {
-            
+
         }
     }
 }
 
+
+
+double Tiny::degreesMinutesToDecimalDegrees(double degrees_minutes)
+{
+    double degrees = floor(degrees_minutes / 100.0);
+    double minutes = degrees_minutes - degrees * 100;
+    double decimal_degrees = degrees + minutes / 60.0;
+    return decimal_degrees;
+}
 
 
 int main(int argc, char *argv[])

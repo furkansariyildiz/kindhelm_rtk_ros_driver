@@ -51,6 +51,8 @@ namespace Kindhelm
 
             void makeSenseOfData(string serial_data);
 
+            double degreesMinutesToDecimalDegrees(double degrees_minutes);
+
             void publishNavSatFix(void);
 
             void publishImu(void);
