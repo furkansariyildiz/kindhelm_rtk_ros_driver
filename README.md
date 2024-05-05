@@ -2,8 +2,8 @@
 Kindhelm Tiny ROS2 Foxy, Galactic driver. 
 
 <p align="left">
-  <img src="documents/kindhelm-logo-header.png" style="width: 10%; height: 10%"/>
-  <img src="documents/ros2.png.png" style="width: 10%; height: 10%"/>
+  <img src="documents/kindhelm.jpeg" style="width: 10%; height: 10%"/>
+  <img src="documents/ros2.png" style="width: 10%; height: 10%"/>
 </p>
 
 
